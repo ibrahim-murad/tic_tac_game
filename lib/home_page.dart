@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,10 +15,14 @@ class _HomePageState extends State<HomePage> {
   int ohScore = 0;
   int exScore = 0;
   int filledBox = 0;
+
+  static var myNewFontWhite = GoogleFonts.pressStart2p(
+    textStyle: TextStyle(color: Colors.white, letterSpacing: 3, fontSize: 15),
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[800],
+      backgroundColor: Colors.grey[900],
       body: Column(
         children: [
           Expanded(
@@ -30,8 +35,8 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Player O", style: myTextStyle),
-                        Text(ohScore.toString(), style: myTextStyle),
+                        Text("Player O", style: myNewFontWhite),
+                        Text(ohScore.toString(), style: myNewFontWhite),
                       ],
                     ),
                   ),
@@ -40,8 +45,8 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Player X", style: myTextStyle),
-                        Text(exScore.toString(), style: myTextStyle),
+                        Text("Player X", style: myNewFontWhite),
+                        Text(exScore.toString(), style: myNewFontWhite),
                       ],
                     ),
                   ),
@@ -74,7 +79,20 @@ class _HomePageState extends State<HomePage> {
               },
             ),
           ),
-          Expanded(child: Container()),
+          Expanded(
+            child: Container(
+              child: Center(
+                child: Column(
+                  children: [
+                    SizedBox(height: 20),
+                    Text("Tic Tac Toe", style: myNewFontWhite),
+                    SizedBox(height: 30),
+                    Text("Created by Ibrahim", style: myNewFontWhite),
+                  ],
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
